@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<Configuration>
+    <ViewDefinitions>
+        <!-- Subscriber.Task -->
+        <View>
+            <Name>Subscriber.Task</Name>
+            <ViewSelectedBy>
+                <TypeName>Subscriber.Task</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+                <AutoSize/>
+                <TableHeaders>
+                    <TableColumnHeader/>
+                    <TableColumnHeader/>
+                    <TableColumnHeader/>
+                    <TableColumnHeader/>
+                    <TableColumnHeader/>
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>ComputerName</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Subscription</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>LastRun</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>LastResult</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Filter</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>

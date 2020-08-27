@@ -1,0 +1,22 @@
+﻿
+# ignore the settings folder and files for VSCode and PSS
+.vscode/*
+*.psproj
+*TempPoint*
+
+# Ignore staging info from Visual Studio
+library/Subscriber/.vs/*
+library/Subscriber/Subscriber/bin/*
+library/Subscriber/Subscriber/obj/*
+
+# ignore PowerShell Studio MetaData
+Subscriber/Subscriber.psproj
+Subscriber/Subscriber.psproj.bak
+Subscriber/Subscriber.psprojs
+Subscriber/Subscriber.psproj
+
+# ignore the TestResults
+TestResults/*
+
+# ignore the publishing Directory
+publish/*

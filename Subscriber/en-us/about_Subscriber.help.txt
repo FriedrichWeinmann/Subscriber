@@ -1,0 +1,11 @@
+﻿TOPIC
+	about_Subscriber
+	
+SHORT DESCRIPTION
+	Explains how to use the Subscriber powershell module
+	
+LONG DESCRIPTION
+	<Insert Content here>
+
+KEYWORDS
+	Subscriber
