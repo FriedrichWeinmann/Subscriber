@@ -23,6 +23,7 @@
 	
 		List all event subscriptions installed on the local computer.
 #>
+	[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingEmptyCatchBlock", "")]
 	[CmdletBinding()]
 	param (
 		[string]
