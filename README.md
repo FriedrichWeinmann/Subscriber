@@ -1,31 +1,24 @@
 ﻿# Description
 
-Insert a useful description for the Subscriber project here.
+This module is designed to facilitate subscribing PowerShell actions to events in the Windows Eventlog.
 
-Remember, it's the first thing a visitor will see.
+## Installation
 
-# Project Setup Instructions
-## Working with the layout
+```powershell
+Install-Module Subscriber
+```
 
-- Don't touch the psm1 file
-- Place functions you export in `functions/` (can have subfolders)
-- Place private/internal functions invisible to the user in `internal/functions` (can have subfolders)
-- Don't add code directly to the `postimport.ps1` or `preimport.ps1`.
-  Those files are designed to import other files only.
-- When adding files & folders, make sure they are covered by either `postimport.ps1` or `preimport.ps1`.
-  This adds them to both the import and the build sequence.
+## Using the module
 
-## Setting up CI/CD
+A simple eventsubscription could look like this:
 
-> To create a PR validation pipeline, set up tasks like this:
+```powershell
+Install-EventSubscription -SubscriptionName 'Account Lockout' -ScriptPath '.\lockout.ps1' -LogName 'Security' -Source 'Microsoft-Windows-Security-Auditing' -EventID 4740
+```
 
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
+That would install the event subscription & task code on the local computer.
+To install it on all domain controllers instead, this should do the trick:
 
-> To create a build/publish pipeline, set up tasks like this:
-
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Build (PowerShell Task; VSTS-Build.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
+```powershell
+Install-EventSubscription -Computername (Get-ADComputer -LDAPFilter '(primaryGroupID=516)').DNSHostName -SubscriptionName 'Account Lockout' -ScriptPath '.\lockout.ps1' -LogName 'Security' -Source 'Microsoft-Windows-Security-Auditing' -EventID 4740
+```
